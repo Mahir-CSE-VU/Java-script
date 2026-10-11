@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculetor</title>
+  <style>
+.btn1{
+    margin: 5px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #000000;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #f8f3f3;
+    cursor: pointer;
+    width: 50px;
+  }
+  .btn2{
+    margin: 5px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #1eff00;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+    cursor: pointer;
+    width: 50px;
+  }
+  .btn3{
+    margin: 5px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #e74444;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+    cursor: pointer;
+    width: 50px;
+  }
+  .btn4{
+    margin: 5px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #e8f401;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+    cursor: pointer;
+    width: 50px;
+  }
+  </style>
+</head>
+<body>
+  <button class="btn1" onclick="console.log(cal+='1')">1</button>
+  <button class="btn1" onclick="console.log(cal+='2')">2</button>
+  <button class="btn1" onclick="console.log(cal+='3')">3</button>
+  <button class="btn2" onclick="console.log(cal+='/')">/</button> <br>
+  <button class="btn1" onclick="console.log(cal+='4')">4</button>
+  <button class="btn1" onclick="console.log(cal+='5')">5</button>
+  <button class="btn1" onclick="console.log(cal+='6')">6</button>
+  <button class="btn2" onclick="console.log(cal+='-')">-</button><br>
+  <button class="btn1" onclick="console.log(cal+='7')">7</button>
+  <button class="btn1" onclick="console.log(cal+='8')">8</button>
+  <button class="btn1" onclick="console.log(cal+='9')">9</button>
+  <button class="btn2" onclick="console.log(cal+='*')">*</button><br>
+  <button class="btn1" onclick="console.log(cal+='0')">0</button>
+  <button class="btn1" onclick="console.log( cal+='.')">.</button>
+  <button class="btn3" onclick="console.log(cal = cal.slice(0, -1))">DL</button>
+  <button class="btn2" onclick="console.log(cal+='+')">+</button><br>
+  <button class="btn2" onclick="console.log(cal+='(')">(</button>
+  <button class="btn2" onclick="console.log(cal+=')')">)</button>
+  <button class="btn3" onclick="console.log(cal='')">AC</button>
+  <button class="btn4" onclick="console.log(eval(cal))">=</button><br>
+
+
+  <script>
+  let cal='';
+  </script>
+</body>
+</html>
