@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coin Flip Game</title>
+  <style>
+    h1{
+
+    text-align: center;
+    color: rgb(212, 12, 35);
+    }
+    div{
+
+        display: flex;
+        justify-content: center;    
+        height: 60px;
+
+    }
+  button {
+
+        width: 100px;
+        padding: 10px;
+        margin: 5px;
+        margin-right: 20px;
+        border-radius: 15px; 
+        border: 2px solid red;
+        background-color: black;
+        color: azure;
+        font-weight: bold;
+        font-family:' sans-serif';
+        font-size: 20px;
+        
+        
+        }
+  </style>
+</head>
+<body>
+  <h1>Coin Flip Game</h1>
+  <div>
+
+<button onclick="
+ const rand1=Math.random();
+ let cpm1='';
+ let result1=''; 
+  
+  if(rand1 >=0 && rand1 <0.5){
+    cpm1='Head'
+  }
+  else  if(rand1 >=0.5 && rand1 < 1){
+    cpm1='Tails' 
+  }
+
+  if(cpm1 === 'Head'){
+    result1 = 'Win';
+    alert(`You chose Head  coin landed  ${cpm1}, you ${result1}`);
+  }
+  else if(cpm1 ==='Tails'){
+    result1='Lose';
+     alert(`You chose Head  coin landed  ${cpm1}, you ${result1}`);
+  }
+  
+  
+  ">Heads</button>
+<button onclick="
+ const rand2=Math.random();
+ let cpm2='';
+ let result2=''; 
+  
+  if(rand2 >=0 && rand2 <0.5){
+    cpm2='Head'
+  }
+  else  if(rand2 >=0.5 && rand2 < 1){
+    cpm2='Tails' 
+  }
+
+  if(cpm2 === 'Head'){
+    result2 = 'Lose';
+     alert(`You chose Tails  coin landed  ${cpm2}, you ${result2}`);
+  }
+  else if(cpm2 ==='Tails'){
+    result2='Win';
+     alert(`You chose Tails  coin landed  ${cpm2}, you ${result2}`);
+  }
+  
+  ">Tails</button>
+
+</div>
+  <script>
+
+  </script>
+</body>
+</html>
