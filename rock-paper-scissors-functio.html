@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functions</title>
+  <style>
+    h1{
+
+        text-align: center;
+        color: rgb(212, 12, 35);
+    }
+    div{
+
+        display: flex;
+        justify-content: center;    
+        height: 60px;
+
+    }
+  button {
+
+        width: 100px;
+        padding: 10px;
+        margin: 5px;
+        margin-right: 20px;
+        border-radius: 15px; 
+        border: 2px solid red;
+        background-color: black;
+        color: azure;
+        font-weight: bold;
+        font-family:' sans-serif';
+        font-size: 20px;
+        
+        
+        }
+  </style>
+</head>
+<body>
+
+<h1>Rock Paper Scissors Game</h1>
+<div>
+  <button onclick="
+   playgame('rock')
+    ">Rock</button>
+
+  <button onclick="
+  playgame('paper')
+  
+  ">Paper</button>
+
+  <button onclick="
+  playgame('scissors')
+    ">Scissors</button>
+
+</div>
+
+  <script>
+ function com(){
+  const rand=Math.random();
+  let com=''
+  if(rand>=0 && rand<1/3){
+   com='rock'
+  }
+  else if(rand>=1/3 && rand<2/3){
+   com='paper'
+  } 
+  else if(rand>=2/3 && rand<1){
+   com='scissors'
+  }
+  return com;
+ }
+function playgame(playerMove ){
+const cpmove=com();
+let result='';
+
+//rock ..............//
+
+if(playerMove==='rock'){
+if(cpmove==='rock'){
+result='tie'
+}
+else if(cpmove==='paper'){
+result='lose'
+}
+else if(cpmove==='scissors'){
+result='win'
+}
+}
+
+//paper ..............//
+
+else if(playerMove==='paper'){
+if(cpmove==='rock'){
+result='win'
+}
+else if(cpmove==='paper'){
+result='tie'
+}
+else if(cpmove==='scissors'){
+result='lose'
+}
+}
+
+//scissors ..............//
+
+else if(playerMove==='scissors'){
+if(cpmove==='rock'){
+result='lose'
+}
+else if(cpmove==='paper'){
+result='win'
+}
+else if(cpmove==='scissors'){
+result='ttie'
+}
+}
+alert(`You pick ${playerMove} computer pick ${cpmove},${result}`);
+
+}
+
+  </script>
+</body>
+</html>
