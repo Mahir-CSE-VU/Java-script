@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Function Execise</title>
+  <style>
+
+  </style>
+
+</head>
+<body>
+
+<script>
+  function greet(name){
+    console.log(`hello ${name}`);
+  }
+  greet('Mahir');
+  greet("Robin");
+  greet();
+
+  function cexe(name){
+  if(!name){
+    console.log('Hi there')
+  }
+  else{
+    console.log(`hello ${name}`);
+  }
+  }
+  cexe('mahir');
+  cexe();
+
+  function covertToFahrenheit(celsius){
+  let result;
+
+   result=(celsius*9/5)+32;
+   return result;
+  }
+
+ console.log(covertToFahrenheit(25));
+
+
+  function covertTocelsius(fahrenheit){
+  let result;
+
+   result=(fahrenheit-32)*5/9;
+   return result;
+  }
+
+ console.log(covertTocelsius(86));
+
+function convertTemperature(degree,unit){
+let result='';
+
+if(unit==='c'){
+result=(degree*9/5)+32 +' F';
+}
+
+else if(unit ==='f'){
+
+  result=(degree-32)*5/9+' C';
+
+}
+return result;
+}
+
+console.log(convertTemperature(25, 'c'));
+console.log(convertTemperature(86, 'f'));
+
+
+function convertLength(length,from,to){
+let result='';
+
+if(from ==='miles'&& (to==='km'||to ==='ft')){
+ if(to==='km'){ result=length*1.6 +' Km'}
+ else if(to === 'ft'){result=length*5280 +' Ft'}
+}
+else if(from ==='km'&& (to ==='miles' ||to ==='ft')){
+  if (to==='miles'){result=length/1.6 +' miles'}
+  else if(to === 'ft'){result=length*3281 +' Ft'}
+}
+else if(from ==='ft'&& (to ==='miles' ||to ==='km')){
+  if (to==='miles'){result=(length/5280).toFixed(3)  +' miles'}
+  else if(to === 'km'){result=(length/3281).toFixed(3)  +' km'}
+}
+
+else if(from ==='km'&& to==='km'){
+  result=length +" km"
+}
+else if(from ==='miles' && to ==='miles'){
+  result=length +' miles'
+}
+else if(from ==='ft'&& to ==='ft'){
+  result=length +" Ft"
+}
+
+
+else if((from!=='km'||from!=='miles' ||from !=='ft') &&(to!=='km'|| to!=='miles' ||to !=='ft')){
+ return `invalid unit: ${from}`;
+}
+/* 
+else {
+ return `invalid unit: ${from}`;
+}
+*/
+  return result;
+}
+
+console.log(convertLength(50,'miles','km'));
+console.log(convertLength(32,'km','miles'));
+console.log(convertLength(50,'km','km'));
+console.log(convertLength(32,'miles','miles'));
+console.log(convertLength(32,'miles','ft'));
+console.log(convertLength(6200,'ft','miles'));
+console.log(convertLength(4200,'ft','km'));
+console.log(convertLength(32,'ft','ft'));
+console.log(convertLength(32,'lbs','lbs'));
+
+
+</script>
+</body>
+</html>
