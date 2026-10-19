@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADD Score rock paper scissors</title>
+  <style>
+    h1{
+
+        text-align: center;
+        color: rgb(212, 12, 35);
+    }
+    div{
+
+        display: flex;
+        justify-content: center;    
+        height: 60px;
+
+    }
+  button {
+        height: 70px;
+        width: 100px;
+        padding: 10px;
+        margin: 5px;
+        margin-right: 20px;
+        border-radius: 15px; 
+        border: 2px solid red;
+        background-color: black;
+        color: azure;
+        font-weight: bold;
+        font-family:' sans-serif';
+        font-size: 20px;
+        }
+
+          .btn{
+        height: 70px;
+        width: 100px;
+        padding: 10px;
+        margin: 5px;
+        margin-right: 20px;
+        border-radius: 15px; 
+        border: 2px solid rgb(0, 0, 0);
+        background-color: rgb(188, 7, 7);
+        color: azure;
+        font-weight: bold;
+        font-family:' sans-serif';
+        font-size: 20px;
+        display: block;
+
+  }      
+    
+  </style>
+</head>
+<body>
+
+<h1>Rock Paper Scissors Game</h1>
+<div>
+  <button onclick="
+   playgame('rock')
+    ">Rock</button>
+
+  <button onclick="
+  playgame('paper')
+  
+  ">Paper</button>
+
+  <button onclick="
+  playgame('scissors')
+    ">Scissors</button>
+
+  <button class="btn" onclick="
+  score.win=0;
+  score.lose=0;
+  score.tie=0
+  alert('Score Reset!');
+  ">Reset Score</button>  
+
+</div>
+
+  <script>
+
+const score = JSON.parse(localStorage.getItem('save')) || {
+  win: 0,
+  lose: 0,
+  tie: 0
+};
+
+
+ function com(){
+  const rand=Math.random();
+  let com=''
+  if(rand>=0 && rand<1/3){
+   com='rock'
+  }
+  else if(rand>=1/3 && rand<2/3){
+   com='paper'
+  } 
+  else if(rand>=2/3 && rand<1){
+   com='scissors'
+  }
+  return com;
+ }
+function playgame(playerMove ){
+const cpmove=com();
+let result='';
+
+//rock ..............//
+
+if(playerMove==='rock'){
+if(cpmove==='rock'){
+result='tie'
+}
+else if(cpmove==='paper'){
+result='lose'
+}
+else if(cpmove==='scissors'){
+result='win'
+}
+}
+
+//paper ..............//
+
+else if(playerMove==='paper'){
+if(cpmove==='rock'){
+result='win'
+}
+else if(cpmove==='paper'){
+result='tie'
+}
+else if(cpmove==='scissors'){
+result='lose'
+}
+}
+
+//scissors ..............//
+
+else if(playerMove==='scissors'){
+if(cpmove==='rock'){
+result='lose'
+}
+else if(cpmove==='paper'){
+result='win'
+}
+else if(cpmove==='scissors'){
+result='tie'
+}
+}
+
+if(result === 'win'){
+ score.win +=1;
+}
+else if(result === 'lose'){
+ score.lose +=1;
+}
+else if(result === 'tie'){
+ score.tie +=1;
+}
+
+localStorage.setItem('save',JSON.stringify(score));
+
+
+
+alert(`You pick ${playerMove} computer pick ${cpmove},${result}
+Wins : ${score.win} loses : ${score.lose} Ties : ${score.tie}`);
+
+}
+
+  </script>
+</body>
+</html>
