@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM exe</title>
+</head>
+<body>
+
+<button class="btn1">Click</button>
+<button class="btn2">Click2</button><br><br><br>
+
+<button class="hd" onclick="
+displayMove('Heads');
+">Heads</button>
+<button class="tl" onclick="
+displayMove('Tails');
+">Tails</button>
+
+<p class="disMove"></p>
+
+<input type="text" class="input1" onkeydown="
+if(event.key==='Enter'){
+submit();
+}
+
+
+">
+<button onclick="
+  submit();
+">Submit</button>
+<p class="disInput"></p><br><br>
+
+
+<input type="text" class="input2" onkeydown="
+if(event.key==='Enter'){
+Calculate();
+}
+
+">
+<button onclick="
+ Calculate();
+">Calculate</button>
+<p class="disCal"></p>
+
+
+<input placeholder="Type something" class="js-input"
+ onkeyup="
+ const inputElement = (document.querySelector('.js-input')).value;
+ document.querySelector('.js-message')
+  .innerHTML = inputElement;
+ ">
+
+<p class="js-message"></p>
+
+
+
+
+  <script>
+    function Calculate(){
+    let cal= Number((document.querySelector('.input2')).value);
+    let result=0;
+      if(cal <40){
+        result=((cal*100)+(10*100))/100
+      }
+      else if(cal>40){
+        result=cal;
+      }
+    document.querySelector('.disCal')
+      .innerHTML=`$${result}`
+    }
+
+    function submit(){
+     let storeInput1= (document.querySelector('.input1')).value
+     //let getStore=storeInput1.value//
+     document.querySelector('.disInput')
+      .innerHTML=`Your Name Is ${storeInput1}`   
+     
+    }
+    function displayMove(playerMove){
+      if(playerMove==='Heads'){
+        document.querySelector('.disMove')
+         .innerHTML=`You pick ${playerMove}`
+
+      }
+      else if(playerMove==='Tails'){
+        document.querySelector('.disMove')
+         .innerHTML=`You pick ${playerMove}`
+
+      }
+
+    }
+    console.log( document.querySelector('.btn1'));
+    document.querySelector('.btn2')
+     .innerHTML='Click done!'
+  </script>
+</body>
+</html>

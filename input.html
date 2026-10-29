@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input dom</title>
+</head>
+<body>
+  <input class="js-input" type="text" onkeydown="
+
+ nnn();
+    
+    
+    ">
+  <button onclick="
+  let calcu=document.querySelector('.js-input')
+   let result= Number(calcu.value);
+   if(result <40){
+    result +=10
+   }
+   document.querySelector('.js-show-result')
+   .innerHTML=`$${result}`
+  
+  ">calculate</button>
+  <p class="js-show-result"></p>
+  <script>
+
+function nnn(){
+      if(event.key==='Enter'){
+
+  let calcu=document.querySelector('.js-input')
+   let result= Number(calcu.value);
+   if(result <40){
+    result +=10
+   }
+   document.querySelector('.js-show-result')
+   .innerHTML=`$${result}`
+
+    }
+}
+  </script>
+</body>
+</html>
